@@ -17,7 +17,15 @@ module.exports = {
       {
         title: 'Get started',
         collapsable: false,
-        children: ['/javascript/001-get-started.md', '/javascript/002-globby.md']
+        children: [
+          '/overview/001-install.md',
+          '/overview/002-clusterize.md',
+          '/overview/003-ecosystem-file.md',
+          '/overview/004-load-balancing.md',
+          '/overview/005-watch-restart.md',
+          '/overview/006-restart-strategies.md',
+          '/overview/007-log-management.md',
+        ]
       }
     ]
   }
