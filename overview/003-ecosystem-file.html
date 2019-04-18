@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>ecosystem-file | Pm2 notes</title>
+    <meta name="description" content="Pm2 notes">
+    <link rel="icon" href="http://himg.bdimg.com/sys/portrait/item/be10475f686d6c73db00.jpg">
+    
+    <link rel="preload" href="/pm2-notes/assets/css/0.styles.4c24d0cd.css" as="style"><link rel="preload" href="/pm2-notes/assets/js/app.027ae5d6.js" as="script"><link rel="preload" href="/pm2-notes/assets/js/2.61df3da5.js" as="script"><link rel="preload" href="/pm2-notes/assets/js/8.550a3c86.js" as="script"><link rel="prefetch" href="/pm2-notes/assets/js/10.dd2588cb.js"><link rel="prefetch" href="/pm2-notes/assets/js/11.709b8ebc.js"><link rel="prefetch" href="/pm2-notes/assets/js/12.2807768b.js"><link rel="prefetch" href="/pm2-notes/assets/js/13.00770887.js"><link rel="prefetch" href="/pm2-notes/assets/js/3.e2929214.js"><link rel="prefetch" href="/pm2-notes/assets/js/4.75ae620a.js"><link rel="prefetch" href="/pm2-notes/assets/js/5.914058e2.js"><link rel="prefetch" href="/pm2-notes/assets/js/6.4a1d6869.js"><link rel="prefetch" href="/pm2-notes/assets/js/7.7a371d94.js"><link rel="prefetch" href="/pm2-notes/assets/js/9.4fb5cb68.js">
+    <link rel="stylesheet" href="/pm2-notes/assets/css/0.styles.4c24d0cd.css">
+  </head>
+  <body>
+    <div id="app" data-server-rendered="true"><div class="theme-container"><header class="navbar"><div class="sidebar-button"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" viewBox="0 0 448 512" class="icon"><path fill="currentColor" d="M436 124H12c-6.627 0-12-5.373-12-12V80c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12z"></path></svg></div> <a href="/pm2-notes/" class="home-link router-link-active"><!----> <span class="site-name">Pm2 notes</span></a> <div class="links"><div class="search-box"><input aria-label="Search" autocomplete="off" spellcheck="false" value=""> <!----></div> <!----></div></header> <div class="sidebar-mask"></div> <aside class="sidebar"><!---->  <ul class="sidebar-links"><li><section class="sidebar-group depth-0"><p class="sidebar-heading open"><span>Get started</span> <!----></p> <ul class="sidebar-links sidebar-group-items"><li><a href="/pm2-notes/overview/001-install.html" class="sidebar-link">Installation</a></li><li><a href="/pm2-notes/overview/002-clusterize.html" class="sidebar-link">Clusterize</a></li><li><a href="/pm2-notes/overview/003-ecosystem-file.html" class="active sidebar-link">ecosystem-file</a><ul class="sidebar-sub-headers"><li class="sidebar-sub-header"><a href="/pm2-notes/overview/003-ecosystem-file.html#generate-template-file" class="sidebar-link">generate template file</a></li><li class="sidebar-sub-header"><a href="/pm2-notes/overview/003-ecosystem-file.html#current-app" class="sidebar-link">current app</a></li><li class="sidebar-sub-header"><a href="/pm2-notes/overview/003-ecosystem-file.html#start" class="sidebar-link">start</a></li></ul></li><li><a href="/pm2-notes/overview/004-load-balancing.html" class="sidebar-link">load-balancing</a></li><li><a href="/pm2-notes/overview/005-watch-restart.html" class="sidebar-link">watch-restart</a></li><li><a href="/pm2-notes/overview/006-restart-strategies.html" class="sidebar-link">restart-strategies</a></li><li><a href="/pm2-notes/overview/007-log-management.html" class="sidebar-link">log-management</a></li></ul></section></li></ul> </aside> <main class="page"> <div class="content default"><h1 id="ecosystem-file"><a href="#ecosystem-file" aria-hidden="true" class="header-anchor">#</a> ecosystem-file</h1> <blockquote><p>The purpose of the ecosystem file is to gather all options and environment variables for all your applications.</p></blockquote> <h2 id="generate-template-file"><a href="#generate-template-file" aria-hidden="true" class="header-anchor">#</a> generate template file</h2> <div class="language-shell extra-class"><pre class="language-text"><code>pm2 init
+</code></pre></div><h2 id="current-app"><a href="#current-app" aria-hidden="true" class="header-anchor">#</a> current app</h2> <div class="language-js extra-class"><pre class="language-js"><code>module<span class="token punctuation">.</span>exports <span class="token operator">=</span> <span class="token punctuation">{</span>
+  apps <span class="token punctuation">:</span> <span class="token punctuation">[</span>
+    <span class="token punctuation">{</span>
+      name<span class="token punctuation">:</span> <span class="token string">'pm2-notes'</span><span class="token punctuation">,</span>
+      script<span class="token punctuation">:</span> <span class="token string">'src/app.js'</span><span class="token punctuation">,</span>
+      args<span class="token punctuation">:</span> <span class="token string">''</span><span class="token punctuation">,</span>
+      instances<span class="token punctuation">:</span> <span class="token number">2</span><span class="token punctuation">,</span>
+      autorestart<span class="token punctuation">:</span> <span class="token boolean">true</span><span class="token punctuation">,</span>
+      watch<span class="token punctuation">:</span> <span class="token boolean">false</span><span class="token punctuation">,</span>
+      max_memory_restart<span class="token punctuation">:</span> <span class="token string">'1G'</span><span class="token punctuation">,</span>
+      env<span class="token punctuation">:</span> <span class="token punctuation">{</span>
+        <span class="token constant">NODE_ENV</span><span class="token punctuation">:</span> <span class="token string">'development'</span>
+      <span class="token punctuation">}</span><span class="token punctuation">,</span>
+      env_production<span class="token punctuation">:</span> <span class="token punctuation">{</span>
+        <span class="token constant">NODE_ENV</span><span class="token punctuation">:</span> <span class="token string">'production'</span>
+      <span class="token punctuation">}</span>
+    <span class="token punctuation">}</span>
+  <span class="token punctuation">]</span>
+<span class="token punctuation">}</span>
+</code></pre></div><h2 id="start"><a href="#start" aria-hidden="true" class="header-anchor">#</a> start</h2> <div class="language-js extra-class"><pre class="language-js"><code>pm2 start ecosystem<span class="token punctuation">.</span>config<span class="token punctuation">.</span>js <span class="token operator">--</span>env production
+</code></pre></div></div> <footer class="page-edit"><!----> <!----></footer> <div class="page-nav"><p class="inner"><span class="prev">
+        ←
+        <a href="/pm2-notes/overview/002-clusterize.html" class="prev">
+          Clusterize
+        </a></span> <span class="next"><a href="/pm2-notes/overview/004-load-balancing.html">
+          load-balancing
+        </a>
+        →
+      </span></p></div> </main></div><div class="global-ui"></div></div>
+    <script src="/pm2-notes/assets/js/app.027ae5d6.js" defer></script><script src="/pm2-notes/assets/js/2.61df3da5.js" defer></script><script src="/pm2-notes/assets/js/8.550a3c86.js" defer></script>
+  </body>
+</html>
