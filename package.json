@@ -8,6 +8,8 @@
     "email": "1290657123@qq.com"
   },
   "scripts": {
+    "app:start":"pm2 start --watch",
+    "app:stop":"pm2 stop pm2-notes",
     "docs:dev": "vuepress dev docs",
     "docs:build": "vuepress build docs",
     "docs:deploy": "./.bin/deploy.sh"

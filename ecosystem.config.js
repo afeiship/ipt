@@ -3,8 +3,8 @@ module.exports = {
     {
       name: 'pm2-notes',
       script: 'app.js',
-      output: './pm2notes-access.log',
-      error: './pm2notes-error.log',
+      output: './pm2-notes/access.log',
+      error: './pm2-notes/error.log',
       args: '',
       ignore_watch: ['node_modules'],
       instances: 2,
