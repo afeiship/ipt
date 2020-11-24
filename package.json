@@ -8,17 +8,10 @@
     "email": "1290657123@qq.com"
   },
   "scripts": {
-    "app:start":"pm2 start --watch",
-    "app:stop":"pm2 stop pm2-notes",
-    "docs:dev": "vuepress dev docs",
-    "docs:build": "vuepress build docs",
-    "docs:deploy": "./.bin/deploy.sh"
+    "app:start": "pm2 start",
+    "app:stop": "pm2 stop pm2-notes"
   },
   "license": "MIT",
-  "devDependencies": {
-    "@vuepress/core": "^1.0.0-alpha.44",
-    "vuepress": "^1.0.0-alpha.44"
-  },
   "dependencies": {
     "koa": "^2.7.0"
   }

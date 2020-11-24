@@ -2,9 +2,9 @@ module.exports = {
   apps: [
     {
       name: 'pm2-notes',
-      script: 'app.js',
-      output: './pm2-notes/access.log',
-      error: './pm2-notes/error.log',
+      script: 'src/app.js',
+      output: './log/access.log',
+      error: './log/error.log',
       args: '',
       ignore_watch: ['node_modules'],
       instances: 2,
@@ -18,17 +18,5 @@ module.exports = {
         NODE_ENV: 'production'
       }
     }
-  ],
-
-  // TODO: UNUSED
-  deploy: {
-    production: {
-      user: 'node',
-      host: '0.0.0.0',
-      ref: 'origin/master',
-      repo: 'git@github.com:repo.git',
-      path: '/var/www/production',
-      'post-deploy': 'npm install && pm2 reload ecosystem.config.js --env production'
-    }
-  }
+  ]
 };
