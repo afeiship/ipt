@@ -2,7 +2,7 @@ import ipt from 'ipt';
 
 const opts = { stdin: process.stdin, stdout: process.stdout };
 
-export default (inItems, inOptions?) => {
+export = (inItems, inOptions?) => {
   const items = inItems || [];
 
   return new Promise((resolve, reject) => {

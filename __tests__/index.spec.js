@@ -1,4 +1,4 @@
-const ipt = require('../dist/index.cjs').default;
+const ipt = require('../dist/index.cjs');
 
 describe('test ipt', () => {
   test('test usage: pure items', (done) => {
