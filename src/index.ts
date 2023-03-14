@@ -1,12 +1,12 @@
 import ipt from 'ipt';
 
-const opts = { stdin: process.stdin, stdout: process.stdout };
+type Items = { name: string; value: string }[] | string[];
 
-export = (inItems, inOptions?) => {
+export = (inItems: Items, inOptions?) => {
   const items = inItems || [];
 
   return new Promise((resolve, reject) => {
-    ipt(items, { ...opts, ...inOptions })
+    ipt(items, inOptions)
       .then((res) => resolve(res[0]))
       .catch(reject);
   });

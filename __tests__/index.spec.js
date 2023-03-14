@@ -17,6 +17,7 @@ describe('test ipt', () => {
     ];
     const values = items.map((item) => item.value);
     ipt(items).then((res) => {
+      // console.log('res::', res);
       expect(values.includes(res)).toBeTruthy();
       done();
     });
