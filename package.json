@@ -8,7 +8,7 @@
   "scripts": {
     "postbuild": "tsc --emitDeclarationOnly",
     "build": "node esbuild.config.js",
-    "test": "jest",
+    "test": "bun test",
     "release": "release-it"
   },
   "license": "MIT",
